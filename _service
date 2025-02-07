@@ -1,0 +1,6 @@
+<services>
+  <service name="cpanspec" mode="manual">
+    <param name="source">File::ShareDir::Dist</param>
+    <param name="add-provides">perl(File::ShareDir::Dist)</param>
+  </service>
+</services>
