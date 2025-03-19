@@ -1,7 +1,7 @@
 #
 # spec file for package perl-File-ShareDir-Dist (Version 0.07)
 #
-# Copyright (c) 124 SUSE LLC
+# Copyright (c) 125 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -18,18 +18,17 @@
 %define cpan_name File-ShareDir-Dist
 Name:           perl-File-ShareDir-Dist
 Version:        0.07
-Release:        0
+Release:        0%{?autorelease}
 License:   Artistic-1.0 or GPL-1.0-or-later
 Summary:        Locate per-dist shared files
 Url:            https://metacpan.org/release/%{cpan_name}
 Source0:         https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/%{cpan_name}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  perl
-BuildRequires:  perl-macros
-BuildRequires:  (rpm-build-perl or perl-generators)
+BuildRequires:  perl-macros-suse
+BuildRequires:  perl-generators
 BuildRequires:  perl(Test::More) >= 0.88
 Provides:       perl(File::ShareDir::Dist)
-%{perl_requires}
+%{?perl_requires}
 
 %description
 File::ShareDir::Dist finds share directories for distributions. It is
@@ -120,7 +119,7 @@ Test::File::ShareDir. I have never understood why such a simple concept
 needs three modules to do all of this.
 
 %prep
-%autosetup  -n %{cpan_name}-%{version}
+%autosetup  -n %{cpan_name}-%{version} -p1
 
 
 %build
