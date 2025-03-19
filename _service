@@ -2,5 +2,7 @@
   <service name="cpanspec" mode="manual">
     <param name="source">File::ShareDir::Dist</param>
     <param name="add-provides">perl(File::ShareDir::Dist)</param>
+    <param name="add-buildrequires">make</param>
+    <param name="add-buildrequires">gcc-c++</param>
   </service>
 </services>
